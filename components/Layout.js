@@ -1,10 +1,12 @@
 import styles from "../styles/Layout.module.css";
+import Nav from './Nav';
 
 import React from "react";
 
 const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
+      <Nav />
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <a
@@ -14,7 +16,7 @@ const Layout = ({ children }) => {
         >
           Authored by{" "}
           <img
-            src="/hamster-with-headphones.png"
+            src="/assets/hamster-with-headphones.png"
             alt="Hamster"
             className={styles.logo}
           />
