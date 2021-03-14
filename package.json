@@ -1,11 +1,14 @@
 {
-  "name": "next-test",
+  "name": "personal-blog-next",
   "version": "0.1.0",
+  "description": "A personal blog website.",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "node_modules/.bin/eslint --fix **/*.js",
+    "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
   },
   "dependencies": {
     "next": "10.0.8",
