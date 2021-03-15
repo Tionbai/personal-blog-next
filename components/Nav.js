@@ -30,7 +30,6 @@ const Nav = () => {
 
   const handleResize = () => {
     if (window.innerWidth <= 672 && smallScreen === false) setSmallScreen(true);
-    console.log(smallScreen);
     if (window.innerWidth > 672 && smallScreen === true) setSmallScreen(false);
     menuActive && setMenuActive(false);
   };
