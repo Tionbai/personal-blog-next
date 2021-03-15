@@ -1,28 +1,15 @@
-import styles from "../styles/Layout.module.css";
-import Nav from './Nav';
-
-import React from "react";
+import styles from "../styles/Layout.module.scss";
+import Nav from "./Nav";
+import Footer from "./Footer";
+import Meta from "./Meta";
 
 const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
+      <Meta />
       <Nav />
       <main className={styles.main}>{children}</main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Authored by{" "}
-          <img
-            src="/assets/hamster-with-headphones.png"
-            alt="Hamster"
-            className={styles.logo}
-          />
-          "The Tina"
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 };

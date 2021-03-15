@@ -1,0 +1,32 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid red;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+
+    &__icon {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__text {
+      margin: 0 2rem;
+    }
+
+    &:hover {
+      color: #0070f3;
+      transform: scaleX(1.05);
+      transition: transform 0.1s ease-out;
+    }
+
+    &.disabled {
+      color: #777;
+      transform: none;
+    }
+  }
+}

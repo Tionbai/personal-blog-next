@@ -6,7 +6,6 @@ export default function Home() {
     <>
       <Head>
         <title>My blog</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className={styles.title}>
         Welcome to my <a>personal blog</a>!
@@ -26,18 +25,12 @@ export default function Home() {
           <p>Browse the archive of older posts!</p>
         </a>
 
-        <a
-          href="/about"
-          className={styles.card}
-        >
+        <a href="/about" className={styles.card}>
           <h3>About me &rarr;</h3>
           <p>Learn about me and my story!</p>
         </a>
 
-        <a
-          href="/contact"
-          className={styles.card}
-        >
+        <a href="/contact" className={styles.card}>
           <h3>Contact &rarr;</h3>
           <p>Get in touch with me!</p>
         </a>
