@@ -1,5 +1,5 @@
 import { articles } from "../../../../../data";
-import styles from "./styles/Pagination.module.scss";
+import styles from "../../../../../styles/Articles/components/Article/components/Pagination.module.scss";
 import {
   arrowForwardIcon,
   arrowBackwardIcon,
@@ -17,9 +17,7 @@ const Pagination = ({ article }) => {
         }`}
         href={!firstArticle ? `/article/${parseInt(article.id) - 1}` : null}
       >
-        <span className={styles.pagination__link__icon}>
-          {arrowBackwardIcon}
-        </span>
+        <span className="icon">{arrowBackwardIcon}</span>
         <span className={styles.pagination__link__text}>Previous article</span>
       </a>
       <a
@@ -29,9 +27,7 @@ const Pagination = ({ article }) => {
         href={!lastArticle ? `/article/${parseInt(article.id) + 1}` : null}
       >
         <span className={styles.pagination__link__text}>Next article</span>
-        <span className={styles.pagination__link__icon}>
-          {arrowForwardIcon}
-        </span>
+        <span className="icon">{arrowForwardIcon}</span>
       </a>
     </section>
   );

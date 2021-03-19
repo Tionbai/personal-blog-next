@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../styles/Nav.module.scss";
+import styles from "../../../styles/Layout/components/Nav.module.scss";
 
 const Nav = () => {
   const [smallScreen, setSmallScreen] = useState(false);
@@ -11,12 +11,8 @@ const Nav = () => {
       pathName: "Home",
     },
     {
-      path: "/news",
-      pathName: "News",
-    },
-    {
-      path: "/archive",
-      pathName: "Archive",
+      path: "/articles",
+      pathName: "Articles",
     },
     {
       path: "/about",
@@ -57,7 +53,7 @@ const Nav = () => {
       </ul>
       <div className={styles.nav__burger} onClick={handleClick}>
         <img
-          src={menuActive ? "/assets/close-24px.svg" : "/assets/menu-24px.svg"}
+          src={menuActive ? "/assets/Nav/close-24px.svg" : "/assets/Nav/menu-24px.svg"}
           alt="Menu"
         />
       </div>

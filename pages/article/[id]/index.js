@@ -1,6 +1,6 @@
 import { server } from "../../../config/index";
-import Meta from "../../../components/Meta";
-import styles from "../../../styles/Article.module.scss";
+import Meta from "../../../components/Layout/components/Meta";
+import styles from "../../../styles/Articles/components/Article/Article.module.scss";
 import Pagination from "./components/Pagination/Pagination";
 
 const Article = ({ article }) => {

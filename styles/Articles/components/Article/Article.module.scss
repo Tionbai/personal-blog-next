@@ -1,18 +1,15 @@
 .article {
   flex: 1;
+  max-width: 42rem;
+  padding: 2rem;
   // border: 1px solid red;
   & > * + * {
     margin-top: 1rem;
   }
 
   &__title {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     font-size: 3rem;
     text-align: center;
-  }
-
-  & p {
-    font-size: 1.1rem;
-    line-height: 1.6;
   }
 }
