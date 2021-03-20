@@ -22,6 +22,12 @@
     padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid #555;
+    transition: box-shadow 0.1s ease-in;
+
+    &:focus-within {
+      border: 1px solid transparent;
+      box-shadow: 0 0 1pt 2pt var(--clr-primary);
+    }
 
     &__textarea {
       padding-top: 0.2rem;
@@ -37,5 +43,22 @@
       color: #555;
     }
   }
+
+  &__button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    background: var(--clr-primary);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--clr-primary-dark);
+    }
+  }
 }
 
+.form__input:focus-within > svg > * {
+  fill: var(--clr-primary);
+}

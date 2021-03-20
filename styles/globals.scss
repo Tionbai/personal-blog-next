@@ -12,6 +12,17 @@
   font-family: "Blinker", sans-serif;
   border: none;
   outline: none;
+  background: none;
+}
+
+:root {
+  --clr-primary: #9c27b0;
+  --clr-primary-light: #d05ce3;
+  --clr-primary-dark: #6a0080;
+  --clr-secondary: #fafafa;
+  --clr-secondary-light: #ffffff;
+  --clr-secondary-dark: #c7c7c7;
+
 }
 
 html,

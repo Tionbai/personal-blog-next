@@ -21,14 +21,21 @@ const Form = () => {
             className={`${styles.form__input__textarea} text`}
           />
         </label>
-        <label className={styles.form__input}>
+        <div className={styles.form__input}>
           {messageIcon}
           <textarea
             placeholder="Message"
             className={`${styles.form__input__textarea} textarea text`}
           />
-        </label>
+        </div>
       </div>
+      <button
+        className={`${styles.form__button} text`}
+        type="submit"
+        onClick={handleSubmit}
+      >
+        Send message
+      </button>
     </form>
   );
 };
