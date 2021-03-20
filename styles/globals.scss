@@ -10,6 +10,8 @@
   padding: 0;
   color: #333;
   font-family: "Blinker", sans-serif;
+  border: none;
+  outline: none;
 }
 
 html,
@@ -22,11 +24,19 @@ button {
   text-transform: uppercase;
 }
 
+textarea {
+  resize: none;
+}
+
 .title {
+  width: 100%;
   font-size: 4rem;
   line-height: 1.15;
   text-align: center;
-  font-family: 'Cinzel', serif;
+}
+
+.alt-font {
+  font-family: "Cinzel", serif;
 }
 
 .title a:hover,
@@ -37,6 +47,7 @@ button {
 }
 
 .subtitle {
+  width: 100%;
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -45,7 +56,7 @@ button {
 
 .text {
   font-size: 1.1rem;
-  letter-spacing: 1pt;
+  letter-spacing: 0.5pt;
   line-height: 1.6;
 }
 
@@ -92,11 +103,4 @@ button {
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
