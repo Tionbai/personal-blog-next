@@ -21,7 +21,7 @@
     gap: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #555;
+    border: 1px solid var(--clr-grey);
     transition: box-shadow 0.1s ease-in;
 
     &:focus-within {
@@ -40,7 +40,8 @@
     }
 
     & > svg > * {
-      color: #555;
+      transition: color 0.1s ease;
+      color: var(--clr-grey-dark);
     }
   }
 
@@ -52,13 +53,31 @@
     background: var(--clr-primary);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transition: background-color 0.2s ease;
+    position: relative;
 
     &:hover {
       background-color: var(--clr-primary-dark);
     }
+
+    &:hover:after {
+      top: 10%;
+      left: 67%;
+    }
+
+    &:after {
+      content: url("/assets/send_white.svg");
+      position: absolute;
+      top: 24%;
+      left: 62%;
+      width: 2rem;
+      height: 2rem;
+      transform: rotate(-30deg) skew(20deg);
+      transition: top 0.5s ease, left 0.5s ease;
+    }
   }
 }
 
-.form__input:focus-within > svg > * {
-  fill: var(--clr-primary);
+.form__input:focus-within > svg > *,
+.form__input:hover > svg > * {
+  color: var(--clr-primary);
 }

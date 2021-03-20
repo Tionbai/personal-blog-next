@@ -1,3 +1,21 @@
 .Contact {
   width: 100%;
+  padding: 1rem;
+  // border: 1px solid red;
+  background: white;
+  box-shadow: 0 5px 10px 1px var(--clr-grey-dark);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.Contact:before {
+  content: '';
+  position: absolute;
+  top: 4rem;
+  left: -50%;
+  width: 200vw;
+  height: 100%;
+  background: var(--clr-primary);
+  z-index: -1;
+  opacity: 0.2;
+  clip-path: ellipse(100% 75% at 50% 0%)
 }

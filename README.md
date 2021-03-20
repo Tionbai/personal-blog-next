@@ -49,7 +49,7 @@ The page shows my personal blog.
 Pages:
 
 - Landing page / home.
-- News.
+- Articles.
 - Archive.
 - About.
 - Contact.
