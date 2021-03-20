@@ -1,0 +1,29 @@
+.map {
+  width: 100vw;
+  height: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-primary);
+  position: relative;
+}
+
+.map__large {
+  position: relative;
+}
+
+.map__small {
+  position: absolute;
+  top: -1rem;
+  left: 54%;
+}
+
+.map__large__img {
+  border-radius: 1rem;
+  box-shadow: 0 0 2px 1px white;
+}
+
+.map__small__img {
+  border-radius: 1rem;
+  box-shadow: 1px 1px 5px 1px var(--clr-primary);
+}
