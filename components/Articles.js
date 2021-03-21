@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Articles = () => {
   return (
@@ -10,6 +10,6 @@ const Articles = () => {
       </a>
     </article>
   );
-}
+};
 
-export default Articles
+export default Articles;
