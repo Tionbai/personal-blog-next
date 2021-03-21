@@ -1,7 +1,7 @@
 import { server } from "../../../config/index";
 import Meta from "../../../components/Layout/components/Meta";
 import styles from "../../../styles/Articles/components/Article/Article.module.scss";
-import Pagination from "./components/Pagination/Pagination";
+import Pagination from "../../../components/Articles/components/Pagination/Pagination";
 
 const Article = ({ article }) => {
   return (
@@ -10,7 +10,10 @@ const Article = ({ article }) => {
         title={`${article.title} - My blog`}
         description={article.description}
       />
-      <article className={styles.article}>
+      <div className={styles.article__header}>
+        <h1 className=" title alt-font white">Articles</h1>
+      </div>
+      <article className={`${styles.article} text`}>
         <h1 className={styles.article__title}>{article.title}</h1>
         <p className={styles.article__body}>{article.body}</p>
         <p>

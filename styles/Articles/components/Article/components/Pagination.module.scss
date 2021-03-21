@@ -1,13 +1,24 @@
 .pagination {
+  padding: 0 1rem;
   width: 100%;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+
+  & span,
+  a,
+  svg,
+  path {
+    cursor: pointer;
+  }
 
   &__link {
     display: flex;
     align-items: center;
     font-size: 1.3rem;
+    cursor: inherit;
 
     &__icon {
       width: 4rem;
@@ -27,6 +38,10 @@
     &.disabled {
       color: #777;
       transform: none;
+
+      &:hover, span, svg, path {
+        cursor: url("/assets/cursorIcon.svg"), auto;
+      }
     }
   }
 }

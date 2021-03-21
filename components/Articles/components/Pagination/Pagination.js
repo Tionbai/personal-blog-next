@@ -1,5 +1,5 @@
-import { articles } from "../../../../../data";
-import styles from "../../../../../styles/Articles/components/Article/components/Pagination.module.scss";
+import { articles } from "../../../../data";
+import styles from "../../../../styles/Articles/components/Article/components/Pagination.module.scss";
 import {
   arrowForwardIcon,
   arrowBackwardIcon,
@@ -10,7 +10,7 @@ const Pagination = ({ article }) => {
   const lastArticle = article.id === articles[articles.length - 1].id;
 
   return (
-    <section className={styles.pagination}>
+    <section className={`${styles.pagination} grid`}>
       <a
         className={`${styles.pagination__link} ${
           firstArticle && styles.disabled
