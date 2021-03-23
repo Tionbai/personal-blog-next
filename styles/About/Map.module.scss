@@ -1,5 +1,6 @@
 .map {
-  width: 100vw;
+  max-width: 100%;
+  width: 100%;
   height: 35rem;
   display: flex;
   align-items: center;
@@ -14,16 +15,18 @@
 
 .map__small {
   position: absolute;
-  top: -1rem;
+  top: -10%;
   left: 54%;
 }
 
 .map__large__img {
   border-radius: 1rem;
   box-shadow: 0 0 2px 1px white;
+  max-width: 100%;
 }
 
 .map__small__img {
   border-radius: 1rem;
   box-shadow: 1px 1px 5px 1px var(--clr-primary);
+  max-width: 100%;
 }

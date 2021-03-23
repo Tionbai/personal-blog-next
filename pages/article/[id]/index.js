@@ -11,11 +11,11 @@ const Article = ({ article }) => {
         description={article.description}
       />
       <div className={styles.article__header}>
-        <h1 className=" title alt-font white">Articles</h1>
+        <h1 className="alt-font white">Articles</h1>
       </div>
       <article className={`${styles.article} text`}>
         <h1 className={styles.article__title}>{article.title}</h1>
-        <p className={styles.article__body}>{article.body}</p>
+        <p >{article.body}</p>
         <p>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

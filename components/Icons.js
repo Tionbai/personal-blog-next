@@ -1,7 +1,6 @@
 export const personIcon = (
   <svg viewBox="0 0 24 24" className="icon">
     <path
-      // className="icon"
       fill="currentColor"
       d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-1c0-2.66-5.33-4-8-4z"
     />
@@ -39,5 +38,19 @@ export const readMoreIcon = (
     <rect height="2" width="9" x="13" y="15" />
     <rect height="2" width="6" x="16" y="11" />
     <polygon points="13,12 8,7 8,11 2,11 2,13 8,13 8,17" />
+  </svg>
+);
+
+export const sendIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 0 24 24"
+    width="24px"
+    fill="currentColor"
+    className="icon"
+  >
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z" />
   </svg>
 );

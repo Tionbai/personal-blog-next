@@ -5,7 +5,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 
   & span,
   a,
@@ -17,13 +16,8 @@
   &__link {
     display: flex;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, calc(1rem + 1vw), 1.3rem);
     cursor: inherit;
-
-    &__icon {
-      width: 4rem;
-      height: 4rem;
-    }
 
     &__text {
       margin: 0 2rem;
@@ -39,8 +33,24 @@
       color: #777;
       transform: none;
 
-      &:hover, span, svg, path {
+      &:hover,
+      span,
+      svg,
+      path {
         cursor: url("/assets/cursorIcon.svg"), auto;
+      }
+    }
+  }
+
+  @media (max-width: 30rem) {
+    &__link {
+      margin-top: 1rem;
+      & > span {
+        width: 4rem;
+        height: 4rem;
+      }
+      &__text {
+        display: none;
       }
     }
   }

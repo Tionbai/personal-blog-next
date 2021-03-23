@@ -1,0 +1,30 @@
+.Home {
+  padding-top: 4rem;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 70rem;
+  flex-wrap: wrap;
+
+  &__content {
+    flex: auto;
+
+    &__title {
+      font-size: 2rem;
+      font-size: clamp(1rem, calc(1.25rem + 1vw), 2rem);
+    }
+  }
+
+  @media (max-width: 30rem) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &__content {
+      min-width: auto;
+    }
+  }
+}

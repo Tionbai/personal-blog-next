@@ -50,9 +50,14 @@ textarea {
 
 .title {
   width: 100%;
-  font-size: 4rem;
-  line-height: 1.15;
   text-align: center;
+  font-size: clamp(2rem, calc(3rem + 1vw), 4rem);
+  line-height: 1.15;
+  word-wrap: break-word;
+
+  @media (max-width: 42rem) {
+    font-size: clamp(1rem, calc(2rem + 1vw), 3rem);
+  }
 }
 
 .alt-font {
@@ -66,24 +71,34 @@ textarea {
 .subtitle {
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  font-size: clamp(1rem, calc(1rem + 1vw), 1.5rem);
   font-weight: bold;
+  text-transform: uppercase;
+
+  @media (max-width: 42rem) {
+    font-size: clamp(1rem, calc(1rem + 1vw), 1.25rem);
+  }
 }
 
 .text {
+  font-size: clamp(0.9rem, calc(0.9rem + 1vw), 1.1rem);
   font-size: 1.1rem;
   letter-spacing: 0.5pt;
   line-height: 1.6;
+
+  @media (max-width: 42rem) {
+    font-size: clamp(0.9rem, calc(0.9rem + 1vw), 1rem);
+  }
 }
 
 .spacing {
   & > * {
-    margin: 2rem;
+    margin: 2rem 0;
   }
 }
 
 .grid {
+  padding: 0 1rem;
   width: 100%;
   max-width: 42rem;
   display: flex;
@@ -99,25 +114,35 @@ textarea {
 }
 
 .card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 1rem;
+  padding-left: 3rem;
+  position: relative;
+  background: white;
+  box-shadow: 0 0 1px 1px var(--clr-grey-light);
+
+  & > * + * {
+    margin-top: 0.5rem;
+  }
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-weight: bold;
   transition: color 0.15s ease, border-color 0.15s ease;
-}
+  background: var(--clr-primary);
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
+  > * {
+    color: white;
+  }
 
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  &:hover {
+    cursor: pointer;
+    color: #0070f3;
+    border-color: #0070f3;
+  }
 }

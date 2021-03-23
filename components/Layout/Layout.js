@@ -5,7 +5,7 @@ import Meta from "./components/Meta";
 
 const Layout = ({ children }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.app}>
       <Meta />
       <Nav />
       <main className={styles.main}>{children}</main>
