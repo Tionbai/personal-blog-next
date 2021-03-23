@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: -10;
+  background: var(--clr-grey-light);
 }
 
 .main {
@@ -14,4 +16,5 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  z-index: 0;
 }

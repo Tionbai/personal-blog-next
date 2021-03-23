@@ -46,10 +46,15 @@ const Home = ({ article, YouTubeData }) => {
           <h1 className={styles.Home__content__title}>Latest article</h1>
           {article ? <ArticlePreview article={article} /> : null}
         </div>
-        <div className={styles.Home__content}>
-          <h1 className={styles.Home__content__title}>Worship playlist</h1>
-          <Resources YouTubeData={YouTubeData} />
-        </div>
+        {YouTubeData ? (
+          <div className={styles.Home__content}>
+            <h1 className={styles.Home__content__title}>Worship playlist</h1>
+            {YouTubeData.items.map((dataItem) => {
+              return <Resources key={dataItem.id} dataItem={dataItem} />;
+            })}
+            <a className="btn-text">To playlist</a>
+          </div>
+        ) : null}
       </section>
     </>
   );

@@ -2,19 +2,10 @@
   width: 100%;
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  padding: 2rem;
+  justify-content: space-evenly;
   gap: 5rem;
 }
 
-.about__link {
-  color: var(--clr-primary);
-  font-weight: bold;
-  text-transform: uppercase;
-  display: inline-block;
-  transition: transform 0.1s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}

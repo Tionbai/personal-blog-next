@@ -20,13 +20,10 @@
   --clr-primary: #3f51b5;
   --clr-primary-light: #757de8;
   --clr-primary-dark: #002984;
+  --clr-primary-25: rgba(63, 81, 181, 0.25);
   --clr-grey: #bdbdbd;
   --clr-grey-light: #efefef;
   --clr-grey-dark: #8d8d8d;
-}
-
-.cursorIcon ~ svg > :last-child {
-  color: red;
 }
 
 html,
@@ -116,11 +113,33 @@ textarea {
 .card {
   display: inline-block;
   margin: 1rem 0;
-  padding: 1rem;
-  padding-left: 3rem;
+  padding: 2rem 3rem;
   position: relative;
-  background: white;
-  box-shadow: 0 0 1px 1px var(--clr-grey-light);
+  background: linear-gradient(120deg, white 67%, rgba(63, 81, 181, 0.10));
+  box-shadow: 0 0 5px 1px var(--clr-primary-25);
+  border-radius: 0.5rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 0.5rem;
+    z-index: -1;
+    box-shadow: 0 20px 20px -15px var(--clr-primary);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    left: 1.75rem;
+    width: 0.25rem;
+    height: 60%;
+    background: var(--clr-primary);
+  }
 
   & > * + * {
     margin-top: 0.5rem;
@@ -135,6 +154,10 @@ textarea {
   font-weight: bold;
   transition: color 0.15s ease, border-color 0.15s ease;
   background: var(--clr-primary);
+  box-shadow: 0 2px 5px 1px var(--clr-grey);
+  color: white;
+  letter-spacing: 0.5pt;
+  transition: transform 0.2s ease;
 
   > * {
     color: white;
@@ -142,7 +165,18 @@ textarea {
 
   &:hover {
     cursor: pointer;
-    color: #0070f3;
-    border-color: #0070f3;
+    transform: scale(1.1);
+  }
+}
+
+.btn-text {
+  color: var(--clr-primary);
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: transform 0.1s ease;
+
+  &:hover {
+    transform: scale(1.1);
   }
 }

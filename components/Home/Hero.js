@@ -10,7 +10,7 @@ const Hero = () => {
         alt="Header image"
       />
       <section className={`${styles.Hero__text} spacing`}>
-        <h1 className="title alt-font">Tinas blog</h1>
+        <h1 className="title">Tinas blog</h1>
         <p className="subtitle">
           This is where I share everything life related.
         </p>

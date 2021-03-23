@@ -27,7 +27,7 @@ const about = () => {
           to
           <br />
           <br />
-          <a className={styles.about__link} href="/contact">
+          <a className="btn-text" href="/contact">
             contact me.
           </a>
         </p>

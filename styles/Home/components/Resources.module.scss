@@ -1,26 +1,4 @@
 .Resources {
-  &__wrapper {
-    &:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      width: 90%;
-      height: 50%;
-      box-shadow: 0 0 25px 2px var(--clr-primary);
-      z-index: -2;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 1.25rem;
-      left: 1.75rem;
-      width: 0.25rem;
-      height: 60%;
-      background: var(--clr-primary);
-    }
-  }
-
 
   &__video {
     max-width: 100%;

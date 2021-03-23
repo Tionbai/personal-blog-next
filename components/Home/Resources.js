@@ -1,11 +1,8 @@
 import React from "react";
 import styles from "../../styles/Home/components/Resources.module.scss";
 
-const Resources = ({ YouTubeData }) => {
-  const firstYouTubeVideo = YouTubeData
-    ? YouTubeData.items[0]
-    : { snippet: {} };
-  const { title, resourceId = {} } = firstYouTubeVideo.snippet || "";
+const Resources = ({ dataItem }) => {
+  const { title, resourceId = {} } = dataItem.snippet || "";
   return (
     <section className={`${styles.Resources} card`}>
       <div className={styles.Resources__wrapper}></div>

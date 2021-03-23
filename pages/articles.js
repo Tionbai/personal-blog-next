@@ -9,7 +9,7 @@ const news = ({ articles }) => {
       <Meta title="Articles - My blog" />
       <div className={styles.articles__header}></div>
       <section className={`${styles.articles} grid spacing`}>
-        <h1 className="title alt-font white">Articles</h1>
+        <h1 className="title white">Articles</h1>
         {articles.map((article) => {
           return <ArticlePreview key={article.id} article={article} />;
         })}
