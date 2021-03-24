@@ -169,11 +169,11 @@ textarea {
   box-shadow: var(--box-shadow-short);
   border-radius: 0.5rem;
   transition: transform 0.2s ease;
-  
+
   &:hover:before {
     box-shadow: var(--clr-primary) 0px 20px 30px -10px;
   }
-  
+
   &:before {
     content: "";
     position: absolute;
