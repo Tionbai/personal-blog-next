@@ -5,7 +5,7 @@ import Map from "../components/About/Map";
 const about = () => {
   return (
     <div className={`${styles.about}`}>
-      <section className="grid spacing">
+      <section className={`${styles.about__text} grid spacing`}>
         <Meta title="About - My blog" />
         <h1 className="title">Tina</h1>
         <h3 className="subtitle">

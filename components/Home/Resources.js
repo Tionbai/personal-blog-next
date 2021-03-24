@@ -5,8 +5,6 @@ const Resources = ({ dataItem }) => {
   const { title, resourceId = {} } = dataItem.snippet || "";
   return (
     <section className={`${styles.Resources} card`}>
-      <div className={styles.Resources__wrapper}></div>
-      <span>{new Date().toLocaleDateString()}</span>
       <iframe
         className={styles.Resources__video}
         src={`https://www.youtube.com/embed/${resourceId.videoId}`}
@@ -14,14 +12,14 @@ const Resources = ({ dataItem }) => {
         allow="autoplay; encrypted-media"
         allowFullScreen
       ></iframe>
-      <h4>{title}</h4>
+      <p>{title}</p>
       <span className={`${styles.articlePreview__link} btn-primary`}>
         <a
           target="_blank"
           rel="noreferrer noopener"
           href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
         >
-          To YouTube
+          Watch on YouTube
         </a>
       </span>
     </section>
