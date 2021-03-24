@@ -1,5 +1,5 @@
 const devUrl = "http://localhost:3000";
-const prodUrl = "https://mywebsite.com"; // Change for actual website.
+const prodUrl = "http://localhost:3000"; // Change for actual website.
 
 const dev = process.env.NODE_ENV !== "production";
 
