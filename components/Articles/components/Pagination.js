@@ -1,9 +1,6 @@
 import { articles } from "../../../data";
 import styles from "../../../styles/Articles/components/Article/components/Pagination.module.scss";
-import {
-  arrowForwardIcon,
-  arrowBackwardIcon,
-} from "../../Icons";
+import { arrowForwardIcon, arrowBackwardIcon } from "../../Icons";
 
 const Pagination = ({ article }) => {
   const firstArticle = article.id === articles[0].id;

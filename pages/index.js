@@ -1,9 +1,10 @@
 import Head from "next/head";
-import { server } from "../config/index";
+// import { server } from "../config/index";
 import styles from "../styles/Home/Home.module.scss";
 import ArticlePreview from "../components/Articles/ArticlePreview";
 import Hero from "../components/Home/Hero";
 import Resources from "../components/Home/Resources";
+import { articles } from '../data';
 
 const YOUTUBE_PLAYLIST_ITEMS_API =
   "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -26,17 +27,17 @@ const getBibleStudyPlaylistData = async () => {
   return data;
 };
 
-const getArticles = async () => {
-  const res = await fetch(`${server}/api/articles`);
-  const articles = await res.json();
-  const threeArticles = articles.slice(0, 3);
-  return threeArticles;
-};
+// const getArticles = async () => {
+//   const res = await fetch(`${server}/api/articles`);
+//   const articles = await res.json();
+//   const threeArticles = articles.slice(0, 3);
+//   return threeArticles;
+// };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const worshipPlaylistData = await getWorshipPlaylistData();
   const bibleStudyPlaylistData = await getBibleStudyPlaylistData();
-  const articles = await getArticles();
+  // const articles = await getArticles();
   return {
     props: {
       worshipPlaylistData,

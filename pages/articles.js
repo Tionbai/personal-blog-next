@@ -1,6 +1,7 @@
 import Meta from "../components/Layout/components/Meta";
 import styles from "../styles/Articles/Articles.module.scss";
-import { server } from "../config/index";
+// import { server } from "../config/index";
+import { articles } from "../data";
 import ArticlePreview from "../components/Articles/ArticlePreview";
 
 const news = ({ articles }) => {
@@ -21,8 +22,8 @@ const news = ({ articles }) => {
 export default news;
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${server}/api/articles`);
-  const articles = await res.json();
+  // const res = await fetch(`${server}/api/articles`);
+  // const articles = await res.json();
 
   return {
     props: {

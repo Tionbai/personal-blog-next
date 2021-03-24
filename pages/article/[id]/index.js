@@ -1,4 +1,5 @@
-import { server } from "../../../config/index";
+// import { server } from "../../../config/index";
+import { articles } from "../../../data";
 import Meta from "../../../components/Layout/components/Meta";
 import styles from "../../../styles/Articles/components/Article/Article.module.scss";
 import Pagination from "../../../components/Articles/components/Pagination";
@@ -10,8 +11,7 @@ const Article = ({ article }) => {
         title={`${article.title} - My blog`}
         description={article.description}
       />
-      <div className={`${styles.article__header}`}>
-      </div>
+      <div className={`${styles.article__header}`}></div>
       <article className={`${styles.article} text`}>
         <h1 className={styles.article__title}>{article.title}</h1>
         <p>{article.body}</p>
@@ -33,8 +33,9 @@ const Article = ({ article }) => {
 export default Article;
 
 export const getStaticProps = async (context) => {
-  const res = await fetch(`${server}/api/articles/${context.params.id}`);
-  const article = await res.json();
+  // const res = await fetch(`${server}/api/articles/${context.params.id}`);
+  // const article = await res.json();
+  const article = articles[context.params.id - 1];
 
   return {
     props: {
@@ -44,8 +45,8 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/api/articles/`);
-  const articles = await res.json();
+  // const res = await fetch(`${server}/api/articles/`);
+  // const articles = await res.json();
 
   const ids = articles.map((article) => article.id);
   const paths = ids.map((id) => ({
