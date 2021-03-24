@@ -162,7 +162,6 @@ textarea {
 }
 
 .card {
-  display: inline-block;
   margin: 1rem 0;
   padding: 2rem 3rem;
   position: relative;
@@ -225,6 +224,7 @@ textarea {
 }
 
 .btn-text {
+  margin: 0 auto;
   color: var(--clr-primary);
   font-weight: bold;
   text-transform: uppercase;

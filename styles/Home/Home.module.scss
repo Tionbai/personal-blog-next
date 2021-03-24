@@ -3,22 +3,25 @@
   flex: 1;
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 2rem;
-  padding: 4rem 1rem;
+  padding: 4rem 2rem;
   width: 100%;
   flex-wrap: wrap;
+  max-width: 150rem;
+
+  &__content:first-of-type {
+    flex: 1.5;
+  }
 
   &__content {
-    border-radius: 1rem;
-    z-index: 0;
-    flex: auto;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
     gap: 2rem;
     flex: 1;
+    flex-wrap: wrap;
 
     &__title {
       font-size: 2rem;

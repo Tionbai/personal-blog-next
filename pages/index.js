@@ -7,34 +7,46 @@ import Resources from "../components/Home/Resources";
 
 const YOUTUBE_PLAYLIST_ITEMS_API =
   "https://www.googleapis.com/youtube/v3/playlistItems";
-const YOUTUBE_PLAYLIST_ID = "PLx7blejRY2MRWp_uOb5TZS9PUzzEN1Yvi";
+const YOUTUBE_WORSHIP_PLAYLIST_ID = "PLx7blejRY2MRWp_uOb5TZS9PUzzEN1Yvi";
+const YOUTUBE_BIBLE_STUDY_PLAYLIST_ID = "PLx7blejRY2MROZDOJc0Q2E5n4QDyO89Ux";
 
-const getYouTubeData = async () => {
+const getWorshipPlaylistData = async () => {
   const res = await fetch(
-    `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${YOUTUBE_PLAYLIST_ID}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`
+    `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${YOUTUBE_WORSHIP_PLAYLIST_ID}&maxResults=3&key=${process.env.YOUTUBE_API_KEY}`
   );
   const data = await res.json();
   return data;
 };
 
-const getArticle = async () => {
-  const res = await fetch(`${server}/api/articles/1`);
-  const article = await res.json();
-  return article;
+const getBibleStudyPlaylistData = async () => {
+  const res = await fetch(
+    `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${YOUTUBE_BIBLE_STUDY_PLAYLIST_ID}&maxResults=3&key=${process.env.YOUTUBE_API_KEY}`
+  );
+  const data = await res.json();
+  return data;
+};
+
+const getArticles = async () => {
+  const res = await fetch(`${server}/api/articles`);
+  const articles = await res.json();
+  const threeArticles = articles.slice(0, 3);
+  return threeArticles;
 };
 
 export const getServerSideProps = async () => {
-  const YouTubeData = await getYouTubeData();
-  const article = await getArticle();
+  const worshipPlaylistData = await getWorshipPlaylistData();
+  const bibleStudyPlaylistData = await getBibleStudyPlaylistData();
+  const articles = await getArticles();
   return {
     props: {
-      YouTubeData,
-      article,
+      worshipPlaylistData,
+      bibleStudyPlaylistData,
+      articles,
     },
   };
 };
 
-const Home = ({ article, YouTubeData }) => {
+const Home = ({ articles, worshipPlaylistData, bibleStudyPlaylistData }) => {
   return (
     <>
       <Head>
@@ -43,16 +55,36 @@ const Home = ({ article, YouTubeData }) => {
       <Hero />
       <section className={styles.Home}>
         <div className={styles.Home__content}>
-          <h1 className={styles.Home__content__title}>Latest article</h1>
-          {article ? <ArticlePreview article={article} /> : null}
+          <h1 className={styles.Home__content__title}>Latest articles</h1>
+          {articles && articles.map((article) => {
+            return <ArticlePreview article={article} />
+          })}
+          <a href="/articles" className="btn-text">
+            To articles
+          </a>
         </div>
-        {YouTubeData ? (
+        {worshipPlaylistData ? (
           <div className={styles.Home__content}>
             <h1 className={styles.Home__content__title}>Worship playlist</h1>
-            {YouTubeData.items.map((dataItem) => {
+            {worshipPlaylistData.items.map((dataItem) => {
               return <Resources key={dataItem.id} dataItem={dataItem} />;
             })}
-            <a className="btn-text">To playlist</a>
+            <a href="/articles" className="btn-text">
+              To playlist
+            </a>
+          </div>
+        ) : null}
+        {bibleStudyPlaylistData ? (
+          <div className={styles.Home__content}>
+            <h1 className={styles.Home__content__title}>
+              Bible study playlist
+            </h1>
+            {bibleStudyPlaylistData.items.map((dataItem) => {
+              return <Resources key={dataItem.id} dataItem={dataItem} />;
+            })}
+            <a href="/articles" className="btn-text">
+              To playlist
+            </a>
           </div>
         ) : null}
       </section>
