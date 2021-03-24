@@ -4,6 +4,7 @@ import styles from "../../styles/About/Map.module.scss";
 const Map = () => {
   return (
     <section className={styles.map}>
+      <div className="bg-gradient-img"></div>
       <div className={styles.map__large}>
         <img
           className={styles.map__large__img}

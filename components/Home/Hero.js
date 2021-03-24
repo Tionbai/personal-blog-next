@@ -4,6 +4,7 @@ import styles from "../../styles/Home/components/Hero.module.scss";
 const Hero = () => {
   return (
     <section className={styles.Hero}>
+      <div className="bg-gradient"></div>
       <section className={`${styles.Hero__text} spacing`}>
         <h1 className="title white">Tinas blog</h1>
         <p className="subtitle white">

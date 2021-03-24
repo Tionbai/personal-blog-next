@@ -7,7 +7,7 @@ const news = ({ articles }) => {
   return (
     <>
       <Meta title="Articles - My blog" />
-      <div className={styles.articles__header}></div>
+      <div className={`${styles.articles__header} bg-gradient-img`}></div>
       <section className={`${styles.articles} grid spacing`}>
         <h1 className="title white">Articles</h1>
         {articles.map((article) => {

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <a href="/about" target="_blank" rel="noopener noreferrer">
-        <span>Authored by </span>
+        <span>Authored by</span>
         <img
           src="/assets/Footer/hamster-with-headphones.png"
           alt="Hamster"
