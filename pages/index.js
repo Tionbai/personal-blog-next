@@ -4,7 +4,7 @@ import styles from "../styles/Home/Home.module.scss";
 import ArticlePreview from "../components/Articles/ArticlePreview";
 import Hero from "../components/Home/Hero";
 import Resources from "../components/Home/Resources";
-import { articles } from '../data';
+import { articles } from "../data";
 
 const YOUTUBE_PLAYLIST_ITEMS_API =
   "https://www.googleapis.com/youtube/v3/playlistItems";
@@ -57,9 +57,10 @@ const Home = ({ articles, worshipPlaylistData, bibleStudyPlaylistData }) => {
       <section className={styles.Home}>
         <div className={styles.Home__content}>
           <h1 className={styles.Home__content__title}>Latest articles</h1>
-          {articles && articles.map((article) => {
-            return <ArticlePreview article={article} />
-          })}
+          {articles &&
+            articles.map((article) => {
+              return <ArticlePreview article={article} />;
+            })}
           <a href="/articles" className="btn-text">
             To articles
           </a>
@@ -70,7 +71,12 @@ const Home = ({ articles, worshipPlaylistData, bibleStudyPlaylistData }) => {
             {worshipPlaylistData.items.map((dataItem) => {
               return <Resources key={dataItem.id} dataItem={dataItem} />;
             })}
-            <a href="/articles" className="btn-text">
+            <a
+              href={`https://www.youtube.com/playlist?list=${YOUTUBE_WORSHIP_PLAYLIST_ID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-text"
+            >
               To playlist
             </a>
           </div>
@@ -83,7 +89,12 @@ const Home = ({ articles, worshipPlaylistData, bibleStudyPlaylistData }) => {
             {bibleStudyPlaylistData.items.map((dataItem) => {
               return <Resources key={dataItem.id} dataItem={dataItem} />;
             })}
-            <a href="/articles" className="btn-text">
+            <a
+              href={`https://www.youtube.com/playlist?list=${YOUTUBE_BIBLE_STUDY_PLAYLIST_ID.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-text"
+            >
               To playlist
             </a>
           </div>

@@ -45,7 +45,11 @@ const Nav = () => {
       <ul className={`${styles.nav__list} ${menuActive && styles.active}`}>
         {pages.map((page) => {
           return (
-            <li key={page.path} className={styles.nav__list__item}>
+            <li
+              key={page.path}
+              className={styles.nav__list__item}
+              onClick={() => setMenuActive(false)}
+            >
               <Link href={page.path}>{page.pathName}</Link>
             </li>
           );
@@ -53,7 +57,11 @@ const Nav = () => {
       </ul>
       <div className={styles.nav__burger} onClick={handleClick}>
         <img
-          src={menuActive ? "/assets/Nav/close-24px.svg" : "/assets/Nav/menu-24px.svg"}
+          src={
+            menuActive
+              ? "/assets/Nav/close-24px.svg"
+              : "/assets/Nav/menu-24px.svg"
+          }
           alt="Menu"
         />
       </div>
